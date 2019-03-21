@@ -60,7 +60,8 @@ select {
 	display:block;
 	width:100%;
 	margin-bottom:25px;
-	transition: color .3s ease-in, border-color .3s ease-in, background-color .3s ease-in, opacity .3s ease-in; box-shadow: 0.3s;
+	transition: color .3s ease-in, border-color .3s ease-in, background-color .3s ease-in, opacity .3s ease-in; 
+	box-shadow: 0.10s;
 	border:none;
 	font-size: 13px;
 	color:#555;
@@ -70,6 +71,14 @@ select {
 }
 input::placeholder {
 	color:#ccc;
+}
+input:not(:placeholder-shown):valid{
+	border-color:#25b86a;
+	box-shadow: 3px 3px 3px 3px #25b86a;
+}
+input:not(:placeholder-shown):invalid{
+	border-color:#FB4E2C;
+	box-shadow: 3px 3px 3px 3px #FB4E2C;
 }
 
 input[type="text"]:focus,
@@ -81,7 +90,6 @@ input[type="url"]:focus,
 textarea:focus,
 select:focus {
 outline: none;
-	box-shadow: 0 0 0 0 #555;
 }
 
 textarea {
@@ -94,22 +102,24 @@ select {
 }
 .ba-float-label {
 	position:relative;
+	
 }
 .ba-float-label__placeholder {
 position:absolute;
 font-family: Arial;
-color:  #797b7f;
+color:#FB4E2C;
 font-size: 18px;
 font-weight: 400;
 line-height: 20px;
 left:20px;
 bottom:14px;
 text-align: center;
-transition: 0.05s;
+transition: 0.10s;
 pointer-events: none;
 }
 .ba-float-label__input {
 	background-color: #f0f0f0;
+	
 }
 .ba-float-label__input::placeholder {
 	color:#f0f0f0;
